@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,7 +37,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08A8760DF643B4BC1A547348 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		08A8760DF643B4BC1A547348 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1506A2F62A2216CB001B4F20 /* YDLogListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogListViewController.h; sourceTree = "<group>"; };
+		1506A2F72A2216CB001B4F20 /* YDLogPreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogPreviewViewController.m; sourceTree = "<group>"; };
+		1506A2F82A2216CB001B4F20 /* YDLogListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogListViewController.m; sourceTree = "<group>"; };
+		1506A2F92A2216CB001B4F20 /* YDLoggerUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLoggerUI.h; sourceTree = "<group>"; };
+		1506A2FA2A2216CB001B4F20 /* YDLogPreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogPreviewViewController.h; sourceTree = "<group>"; };
+		1506A2FC2A2216CB001B4F20 /* YDLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogService.h; sourceTree = "<group>"; };
+		1506A2FD2A2216CB001B4F20 /* YDMmapLogSwizzeling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogSwizzeling.h; sourceTree = "<group>"; };
+		1506A2FE2A2216CB001B4F20 /* YDMmapLogger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YDMmapLogger.cpp; sourceTree = "<group>"; };
+		1506A2FF2A2216CB001B4F20 /* YDLogService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogService.m; sourceTree = "<group>"; };
+		1506A3002A2216CB001B4F20 /* YDMmapLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogService.h; sourceTree = "<group>"; };
+		1506A3012A2216CB001B4F20 /* YDMmapLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogger.h; sourceTree = "<group>"; };
+		1506A3022A2216CB001B4F20 /* YDMmapLogService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = YDMmapLogService.mm; sourceTree = "<group>"; };
+		1506A3032A2216CB001B4F20 /* YDMmapLogSwizzeling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDMmapLogSwizzeling.m; sourceTree = "<group>"; };
 		5677624462728F6965980794 /* Pods-YDLogger_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Tests.debug.xcconfig"; path = "Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* YDLogger_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YDLogger_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,8 +75,8 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C04BC0CEE7F64372E3DBE66 /* Pods-YDLogger_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Example.debug.xcconfig"; path = "Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A4AE395EBAE96F06BFFC0974 /* YDLogger.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = YDLogger.podspec; path = ../YDLogger.podspec; sourceTree = "<group>"; };
-		B5D73B9A1A4764F7897182B1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A4AE395EBAE96F06BFFC0974 /* YDLogger.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YDLogger.podspec; path = ../YDLogger.podspec; sourceTree = "<group>"; };
+		B5D73B9A1A4764F7897182B1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D8BC961351D626D135CA4A7C /* Pods_YDLogger_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDLogger_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A341F145B3C560F9F5F851 /* Pods-YDLogger_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Example.release.xcconfig"; path = "Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E4CDD0C4CE9800FE58CDC363 /* Pods-YDLogger_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Tests.release.xcconfig"; path = "Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,9 +108,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1506A2F42A2216CB001B4F20 /* YDLogger */ = {
+			isa = PBXGroup;
+			children = (
+				1506A2F52A2216CB001B4F20 /* YDLoggerUI */,
+				1506A2FB2A2216CB001B4F20 /* YDLogger */,
+				1506A3042A2216CB001B4F20 /* Assets */,
+			);
+			name = YDLogger;
+			path = ../YDLogger;
+			sourceTree = "<group>";
+		};
+		1506A2F52A2216CB001B4F20 /* YDLoggerUI */ = {
+			isa = PBXGroup;
+			children = (
+				1506A2F62A2216CB001B4F20 /* YDLogListViewController.h */,
+				1506A2F72A2216CB001B4F20 /* YDLogPreviewViewController.m */,
+				1506A2F82A2216CB001B4F20 /* YDLogListViewController.m */,
+				1506A2F92A2216CB001B4F20 /* YDLoggerUI.h */,
+				1506A2FA2A2216CB001B4F20 /* YDLogPreviewViewController.h */,
+			);
+			path = YDLoggerUI;
+			sourceTree = "<group>";
+		};
+		1506A2FB2A2216CB001B4F20 /* YDLogger */ = {
+			isa = PBXGroup;
+			children = (
+				1506A2FC2A2216CB001B4F20 /* YDLogService.h */,
+				1506A2FD2A2216CB001B4F20 /* YDMmapLogSwizzeling.h */,
+				1506A2FE2A2216CB001B4F20 /* YDMmapLogger.cpp */,
+				1506A2FF2A2216CB001B4F20 /* YDLogService.m */,
+				1506A3002A2216CB001B4F20 /* YDMmapLogService.h */,
+				1506A3012A2216CB001B4F20 /* YDMmapLogger.h */,
+				1506A3022A2216CB001B4F20 /* YDMmapLogService.mm */,
+				1506A3032A2216CB001B4F20 /* YDMmapLogSwizzeling.m */,
+			);
+			path = YDLogger;
+			sourceTree = "<group>";
+		};
+		1506A3042A2216CB001B4F20 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				1506A2F42A2216CB001B4F20 /* YDLogger */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for YDLogger */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -193,7 +252,6 @@
 				5677624462728F6965980794 /* Pods-YDLogger_Tests.debug.xcconfig */,
 				E4CDD0C4CE9800FE58CDC363 /* Pods-YDLogger_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +266,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				F619AF18A4C8C290FFECAFE2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,10 +312,11 @@
 				};
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "YDLogger" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -356,24 +414,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F619AF18A4C8C290FFECAFE2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/YDLogger/YDLogger.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YDLogger.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -513,9 +553,11 @@
 			baseConfigurationReference = 7C04BC0CEE7F64372E3DBE66 /* Pods-YDLogger_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C3V5PUXTCL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YDLogger/YDLogger-Prefix.pch";
 				INFOPLIST_FILE = "YDLogger/YDLogger-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,9 +571,11 @@
 			baseConfigurationReference = E1A341F145B3C560F9F5F851 /* Pods-YDLogger_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C3V5PUXTCL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YDLogger/YDLogger-Prefix.pch";
 				INFOPLIST_FILE = "YDLogger/YDLogger-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
