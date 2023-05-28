@@ -61,7 +61,9 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout=UIRectEdgeNone;
-    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     [self configUI];
 }
 
@@ -367,8 +369,12 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
 - (UITextView *)focusTV {
     if (_focusTV == nil) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
-        CGFloat height = screenSize.height - self.view.window.windowScene.statusBarManager.statusBarFrame.size.height - 44.f;
-        _focusTV = [[UITextView alloc] initWithFrame:CGRectMake(screenSize.width / 8, 0, screenSize.width * 3 / 4, height)];
+        if (@available(iOS 13.0, *)) {
+            CGFloat height = screenSize.height - self.view.window.windowScene.statusBarManager.statusBarFrame.size.height - 44.f;
+            _focusTV = [[UITextView alloc] initWithFrame:CGRectMake(screenSize.width / 8, 0, screenSize.width * 3 / 4, height)];
+        } else {
+            _focusTV = [[UITextView alloc] initWithFrame:CGRectMake(screenSize.width / 8, 0, screenSize.width * 3 / 4, screenSize.height - 44.f)];
+        }
         _focusTV.font = [UIFont systemFontOfSize:15.f];
         _focusTV.editable = NO;
         [_focusTV setTextContainerInset:UIEdgeInsetsMake(20.f, 0, 0, 0)];
@@ -399,8 +405,12 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
 - (UITableView *)tableView {
     if (_tableView == nil) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
-        CGFloat height = screenSize.height - self.view.window.windowScene.statusBarManager.statusBarFrame.size.height - 44.f - 49.f;
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 49.f, screenSize.width, height) style:UITableViewStyleGrouped];
+        if (@available(iOS 13.0, *)) {
+            CGFloat height = screenSize.height - self.view.window.windowScene.statusBarManager.statusBarFrame.size.height - 44.f - 49.f;
+            _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 49.f, screenSize.width, height) style:UITableViewStyleGrouped];
+        } else {
+            _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 49.f, screenSize.width, screenSize.height) style:UITableViewStyleGrouped];
+        }
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.estimatedRowHeight = 60.f;

@@ -22,7 +22,7 @@ static NSSet * _yd_dynamic_cbl;
 static NSDictionary * _yd_dynamic_mbl;
 
 // 本地类名与类名前缀的白名单
-static NSMutableSet * _yd_class_white_list ()
+static NSMutableSet * _yd_class_white_list (void)
 {
     return [NSMutableSet setWithArray:@[
                                         @"Art",
@@ -30,7 +30,7 @@ static NSMutableSet * _yd_class_white_list ()
 }
 
 // 本地类名前缀的黑名单
-static NSMutableSet * _yd_class_black_list_pre ()
+static NSMutableSet * _yd_class_black_list_pre (void)
 {
     return [NSMutableSet setWithArray:@[
                                         @"YDMmap",
@@ -39,7 +39,7 @@ static NSMutableSet * _yd_class_black_list_pre ()
 }
 
 // 本地类名的黑名单
-static NSMutableSet * _yd_class_black_list ()
+static NSMutableSet * _yd_class_black_list (void)
 {
     return [NSMutableSet setWithArray:@[
                                         @"ArtLoggerService",
@@ -48,7 +48,7 @@ static NSMutableSet * _yd_class_black_list ()
 }
 
 // 本地方法名前缀的黑名单，方法名的前缀作为key，对应的类的数组为value；若为空数组，则表示所有类
-static NSDictionary * _yd_method_black_list_pre ()
+static NSDictionary * _yd_method_black_list_pre (void)
 {
     return @{
              @".":@[],
@@ -59,7 +59,7 @@ static NSDictionary * _yd_method_black_list_pre ()
 }
 
 // 本地方法名的黑名单，方法名的前缀作为key，对应的类的数组为value；若为空数组，则表示所有类
-static NSDictionary * _yd_method_black_list ()
+static NSDictionary * _yd_method_black_list (void)
 {
     return @{
              @"dealloc":@[],

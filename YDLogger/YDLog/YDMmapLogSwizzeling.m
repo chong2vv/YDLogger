@@ -20,7 +20,7 @@
 #define YD_NEW_INITIALIZE_SEL      NSSelectorFromString([YDHOOK_PREFIXNAME stringByAppendingString:@"initialize"])
 
 // 获取本地类名与类名前缀的白名单
-static NSSet * _yd_static_class_white_list ()
+static NSSet * _yd_static_class_white_list (void)
 {
     static NSSet *cwl = nil;
     static dispatch_once_t cwlToken;

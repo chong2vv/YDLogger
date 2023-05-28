@@ -9,28 +9,31 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "YDLogger"
-  spec.version      = "0.1.0"
+  
+  spec.version      = "0.1.1"
+
   spec.summary      = "日志库"
 
   spec.homepage     = "https://github.com/chong2vv/YDLogger"
 
   spec.license      = "MIT"
 
-  spec.author             = { "王远东" => "chong2vv@gmail.com" }
+  spec.author       = { "王远东" => "chong2vv@gmail.com" }
 
-  spec.platform     = :ios, "9.0"
+  spec.ios.deployment_target = '10.0'
 
   spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
-  spec.source_files = "YDLogger/*"
+
+  spec.source_files = 'YDLogger/*'
   
-  spec.subspec 'YDLogger' do |log_ss|
+  spec.subspec 'YDLog' do |log_ss|
       log_ss.libraries = 'c++'
-      log_ss.source_files = "YDLogger/YDLogger/**/*"
+      log_ss.source_files = "YDLogger/YDLog/**/*"
   end
   
   spec.subspec 'YDLoggerUI' do |logui_ss|
       logui_ss.source_files = "YDLogger/YDLoggerUI/**/*"
-      logui_ss.dependency 'YDLogger/YDLogger'
+      logui_ss.dependency 'YDLogger/YDLog'
   end
   
   spec.static_framework = true

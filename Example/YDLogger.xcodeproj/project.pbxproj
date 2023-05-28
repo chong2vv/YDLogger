@@ -38,19 +38,20 @@
 
 /* Begin PBXFileReference section */
 		08A8760DF643B4BC1A547348 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		1506A2F62A2216CB001B4F20 /* YDLogListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogListViewController.h; sourceTree = "<group>"; };
-		1506A2F72A2216CB001B4F20 /* YDLogPreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogPreviewViewController.m; sourceTree = "<group>"; };
-		1506A2F82A2216CB001B4F20 /* YDLogListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogListViewController.m; sourceTree = "<group>"; };
-		1506A2F92A2216CB001B4F20 /* YDLoggerUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLoggerUI.h; sourceTree = "<group>"; };
-		1506A2FA2A2216CB001B4F20 /* YDLogPreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogPreviewViewController.h; sourceTree = "<group>"; };
-		1506A2FC2A2216CB001B4F20 /* YDLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogService.h; sourceTree = "<group>"; };
-		1506A2FD2A2216CB001B4F20 /* YDMmapLogSwizzeling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogSwizzeling.h; sourceTree = "<group>"; };
-		1506A2FE2A2216CB001B4F20 /* YDMmapLogger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YDMmapLogger.cpp; sourceTree = "<group>"; };
-		1506A2FF2A2216CB001B4F20 /* YDLogService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogService.m; sourceTree = "<group>"; };
-		1506A3002A2216CB001B4F20 /* YDMmapLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogService.h; sourceTree = "<group>"; };
-		1506A3012A2216CB001B4F20 /* YDMmapLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogger.h; sourceTree = "<group>"; };
-		1506A3022A2216CB001B4F20 /* YDMmapLogService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = YDMmapLogService.mm; sourceTree = "<group>"; };
-		1506A3032A2216CB001B4F20 /* YDMmapLogSwizzeling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDMmapLogSwizzeling.m; sourceTree = "<group>"; };
+		1506A3082A233658001B4F20 /* YDLogListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogListViewController.h; sourceTree = "<group>"; };
+		1506A3092A233658001B4F20 /* YDLogPreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogPreviewViewController.m; sourceTree = "<group>"; };
+		1506A30A2A233658001B4F20 /* YDLogListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogListViewController.m; sourceTree = "<group>"; };
+		1506A30B2A233658001B4F20 /* YDLoggerUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLoggerUI.h; sourceTree = "<group>"; };
+		1506A30C2A233658001B4F20 /* YDLogPreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogPreviewViewController.h; sourceTree = "<group>"; };
+		1506A30E2A233658001B4F20 /* YDLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogService.h; sourceTree = "<group>"; };
+		1506A30F2A233658001B4F20 /* YDMmapLogSwizzeling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogSwizzeling.h; sourceTree = "<group>"; };
+		1506A3102A233658001B4F20 /* YDMmapLogger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YDMmapLogger.cpp; sourceTree = "<group>"; };
+		1506A3112A233658001B4F20 /* YDLogService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogService.m; sourceTree = "<group>"; };
+		1506A3122A233658001B4F20 /* YDMmapLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogService.h; sourceTree = "<group>"; };
+		1506A3132A233658001B4F20 /* YDMmapLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogger.h; sourceTree = "<group>"; };
+		1506A3142A233658001B4F20 /* YDMmapLogService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = YDMmapLogService.mm; sourceTree = "<group>"; };
+		1506A3152A233658001B4F20 /* YDMmapLogSwizzeling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDMmapLogSwizzeling.m; sourceTree = "<group>"; };
+		1506A3172A23380C001B4F20 /* YDLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogger.h; sourceTree = "<group>"; };
 		5677624462728F6965980794 /* Pods-YDLogger_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Tests.debug.xcconfig"; path = "Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* YDLogger_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YDLogger_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,45 +109,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1506A2F42A2216CB001B4F20 /* YDLogger */ = {
+		1506A3062A233658001B4F20 /* YDLogger */ = {
 			isa = PBXGroup;
 			children = (
-				1506A2F52A2216CB001B4F20 /* YDLoggerUI */,
-				1506A2FB2A2216CB001B4F20 /* YDLogger */,
-				1506A3042A2216CB001B4F20 /* Assets */,
+				1506A3072A233658001B4F20 /* YDLoggerUI */,
+				1506A30D2A233658001B4F20 /* YDLog */,
+				1506A3162A233658001B4F20 /* Assets */,
+				1506A3172A23380C001B4F20 /* YDLogger.h */,
 			);
 			name = YDLogger;
 			path = ../YDLogger;
 			sourceTree = "<group>";
 		};
-		1506A2F52A2216CB001B4F20 /* YDLoggerUI */ = {
+		1506A3072A233658001B4F20 /* YDLoggerUI */ = {
 			isa = PBXGroup;
 			children = (
-				1506A2F62A2216CB001B4F20 /* YDLogListViewController.h */,
-				1506A2F72A2216CB001B4F20 /* YDLogPreviewViewController.m */,
-				1506A2F82A2216CB001B4F20 /* YDLogListViewController.m */,
-				1506A2F92A2216CB001B4F20 /* YDLoggerUI.h */,
-				1506A2FA2A2216CB001B4F20 /* YDLogPreviewViewController.h */,
+				1506A3082A233658001B4F20 /* YDLogListViewController.h */,
+				1506A3092A233658001B4F20 /* YDLogPreviewViewController.m */,
+				1506A30A2A233658001B4F20 /* YDLogListViewController.m */,
+				1506A30B2A233658001B4F20 /* YDLoggerUI.h */,
+				1506A30C2A233658001B4F20 /* YDLogPreviewViewController.h */,
 			);
 			path = YDLoggerUI;
 			sourceTree = "<group>";
 		};
-		1506A2FB2A2216CB001B4F20 /* YDLogger */ = {
+		1506A30D2A233658001B4F20 /* YDLog */ = {
 			isa = PBXGroup;
 			children = (
-				1506A2FC2A2216CB001B4F20 /* YDLogService.h */,
-				1506A2FD2A2216CB001B4F20 /* YDMmapLogSwizzeling.h */,
-				1506A2FE2A2216CB001B4F20 /* YDMmapLogger.cpp */,
-				1506A2FF2A2216CB001B4F20 /* YDLogService.m */,
-				1506A3002A2216CB001B4F20 /* YDMmapLogService.h */,
-				1506A3012A2216CB001B4F20 /* YDMmapLogger.h */,
-				1506A3022A2216CB001B4F20 /* YDMmapLogService.mm */,
-				1506A3032A2216CB001B4F20 /* YDMmapLogSwizzeling.m */,
+				1506A30E2A233658001B4F20 /* YDLogService.h */,
+				1506A30F2A233658001B4F20 /* YDMmapLogSwizzeling.h */,
+				1506A3102A233658001B4F20 /* YDMmapLogger.cpp */,
+				1506A3112A233658001B4F20 /* YDLogService.m */,
+				1506A3122A233658001B4F20 /* YDMmapLogService.h */,
+				1506A3132A233658001B4F20 /* YDMmapLogger.h */,
+				1506A3142A233658001B4F20 /* YDMmapLogService.mm */,
+				1506A3152A233658001B4F20 /* YDMmapLogSwizzeling.m */,
 			);
-			path = YDLogger;
+			path = YDLog;
 			sourceTree = "<group>";
 		};
-		1506A3042A2216CB001B4F20 /* Assets */ = {
+		1506A3162A233658001B4F20 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -156,7 +158,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				1506A2F42A2216CB001B4F20 /* YDLogger */,
+				1506A3062A233658001B4F20 /* YDLogger */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for YDLogger */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -381,13 +383,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
