@@ -6,9 +6,10 @@
 //  Copyright © 2023 chong2vv. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef YDLogger_h
+#define YDLogger_h
 
-//YDLogger 日志库
 #import "YDLogService.h"
-//YDLogger UI库 可快速查看本地的YDLog信息
 #import "YDLoggerUI.h"
+
+#endif /* YDLogger_h */

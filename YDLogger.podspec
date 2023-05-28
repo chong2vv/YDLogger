@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "YDLogger"
   
-  spec.version      = "0.1.1"
+  spec.version      = "0.1.2"
 
   spec.summary      = "日志库"
 
@@ -24,18 +24,24 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
 
-  spec.source_files = 'YDLogger/*'
+  spec.source_files = 'YDLogger/YDLogger.h'
   
-  spec.subspec 'YDLog' do |log_ss|
-      log_ss.libraries = 'c++'
-      log_ss.source_files = "YDLogger/YDLog/**/*"
+  spec.subspec 'YDLog' do |ss|
+      ss.libraries = 'c++'
+      ss.source_files = "YDLogger/YDLog/**/*"
+      ss.public_header_files = 'YDLogger/YDLog/**/*.h'
+      ss.preserve_paths = 'YDLogger/YDLog/**/*.h'
   end
   
-  spec.subspec 'YDLoggerUI' do |logui_ss|
-      logui_ss.source_files = "YDLogger/YDLoggerUI/**/*"
-      logui_ss.dependency 'YDLogger/YDLog'
+  spec.subspec 'YDLoggerUI' do |ss|
+      ss.source_files = "YDLogger/YDLoggerUI/**/*"
+      ss.dependency 'YDLogger/YDLog'
   end
   
+  spec.pod_target_xcconfig = {
+      'CLANG_CXX_LANGUAGE_STANDARD' => 'c++14',
+      'CLANG_CXX_LIBRARY' => 'libc++'
+    }
   spec.static_framework = true
   spec.requires_arc = true
   spec.frameworks = "Foundation", "UIKit"

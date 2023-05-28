@@ -12,7 +12,7 @@
 #include <libkern/OSAtomic.h>
 #include <unistd.h>
 #include <string>
-
+#include <atomic>
 /**
  自定义错误类型
  
@@ -106,6 +106,7 @@ public:
     void setFlags (uint32_t set)
     {
         OSAtomicOr32Barrier(set, &datas);
+//        std::atomic_fetch_or(&datas, set);
     }
     // 原子性异或操作
     void clearFlags (uint32_t clear)

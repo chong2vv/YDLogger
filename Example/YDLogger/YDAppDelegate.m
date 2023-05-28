@@ -7,7 +7,7 @@
 //
 
 #import "YDAppDelegate.h"
-#import <YDLogger/YDLogger.h>
+#import <YDLogger.h>
 
 @implementation YDAppDelegate
 
