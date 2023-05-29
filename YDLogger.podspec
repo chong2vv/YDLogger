@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "YDLogger"
   
-  spec.version      = "0.1.2"
+  spec.version      = "0.1.3"
 
   spec.summary      = "日志库"
 
@@ -28,9 +28,9 @@ Pod::Spec.new do |spec|
   
   spec.subspec 'YDLog' do |ss|
       ss.libraries = 'c++'
-      ss.source_files = "YDLogger/YDLog/**/*"
-      ss.public_header_files = 'YDLogger/YDLog/**/*.h'
-      ss.preserve_paths = 'YDLogger/YDLog/**/*.h'
+      ss.source_files = "YDLogger/YDLogger/**/*"
+      ss.public_header_files = 'YDLogger/YDLogger/**/*.h'
+      ss.preserve_paths = 'YDLogger/YDLogger/**/*.h'
   end
   
   spec.subspec 'YDLoggerUI' do |ss|
