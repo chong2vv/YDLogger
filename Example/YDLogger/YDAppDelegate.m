@@ -8,7 +8,6 @@
 
 #import "YDAppDelegate.h"
 #import <YDLogger.h>
-//#import <YDL>
 
 @implementation YDAppDelegate
 
