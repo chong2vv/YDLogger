@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
   spec.libraries = 'c++'
 
   spec.subspec 'YDLoggerUI' do |ss|
-      ss.source_files = 'YDLoggerUI/**/*.{h,m}'
+      ss.source_files = 'YDLoggerUI/**/*'
   end
   
 end
