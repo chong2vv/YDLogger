@@ -8,7 +8,7 @@
 
 #import "YDViewController.h"
 #import <YDLogger.h>
-#import <YDLoggerUI.h>
+//#import <YDLoggerUI.h>
 
 @interface YDViewController ()
 
@@ -39,8 +39,8 @@
 }
 
 - (void)logUITestAction {
-    YDLogListViewController *vc = [[YDLogListViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    YDLogListViewController *vc = [[YDLogListViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
