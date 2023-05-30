@@ -6,7 +6,7 @@
 //
 
 #import "YDLogListViewController.h"
-#import "YDLogService.h"
+#import "YDLogger.h"
 #import "YDLogPreviewViewController.h"
 
 @interface YDLogListViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -25,7 +25,7 @@
         self.homeTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     self.edgesForExtendedLayout=UIRectEdgeNone;
-    self.logList = [[[YDLogService shared] getAllLogFileData] copy];
+    self.logList = [[[YDLogger shared] getAllLogFileData] copy];
     _dateFormatter = [[NSDateFormatter alloc] init];
     [_dateFormatter setDateStyle:NSDateFormatterFullStyle];
     [_dateFormatter setTimeStyle:NSDateFormatterShortStyle];

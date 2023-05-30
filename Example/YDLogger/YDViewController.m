@@ -8,6 +8,7 @@
 
 #import "YDViewController.h"
 #import <YDLogger.h>
+#import <YDLoggerUI.h>
 
 @interface YDViewController ()
 

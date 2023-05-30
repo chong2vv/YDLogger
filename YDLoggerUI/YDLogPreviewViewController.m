@@ -6,7 +6,7 @@
 //
 
 #import "YDLogPreviewViewController.h"
-#import "YDLogService.h"
+#import "YDLogger.h"
 
 static NSString * const kYDLogAllLinesKey = @"YDLogAllLines";
 static NSString * const kYDLogCrashKey = @"YDLogCrash";
@@ -46,7 +46,7 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
     self = [super init];
     if (self) {
         self.filePath = filePath;
-        self.logInfoDic = [[[YDLogService shared] getYDLogInfo:filePath] copy];
+        self.logInfoDic = [[[YDLogger shared] getYDLogInfo:filePath] copy];
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateStyle:NSDateFormatterFullStyle];
         [_dateFormatter setTimeStyle:NSDateFormatterShortStyle];

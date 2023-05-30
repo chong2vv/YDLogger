@@ -7,43 +7,32 @@
 #
 
 Pod::Spec.new do |spec|
-
   spec.name         = "YDLogger"
-  
-  spec.version      = "0.1.3"
-
+  spec.version      = "0.1.4"
   spec.summary      = "日志库"
-
   spec.homepage     = "https://github.com/chong2vv/YDLogger"
-
   spec.license      = "MIT"
-
   spec.author       = { "王远东" => "chong2vv@gmail.com" }
-
   spec.ios.deployment_target = '10.0'
-
   spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
 
   spec.source_files = 'YDLogger/YDLogger.h'
   
-  spec.subspec 'YDLog' do |ss|
+  spec.subspec 'YDLogger' do |ss|
       ss.libraries = 'c++'
-      ss.source_files = "YDLogger/YDLogger/**/*"
-      ss.public_header_files = 'YDLogger/YDLogger/**/*.h'
-      ss.preserve_paths = 'YDLogger/YDLogger/**/*.h'
+      ss.source_files = 'YDLogger/**/*'
+      ss.public_header_files = 'YDLogger/**/*'
+      ss.preserve_paths = 'YDLogger/**/*'
+      ss.pod_target_xcconfig = {
+          'CLANG_CXX_LANGUAGE_STANDARD' => 'c++14',
+          'CLANG_CXX_LIBRARY' => 'libc++'
+      }
   end
-  
-  spec.subspec 'YDLoggerUI' do |ss|
-      ss.source_files = "YDLogger/YDLoggerUI/**/*"
-      ss.dependency 'YDLogger/YDLog'
-  end
-  
-  spec.pod_target_xcconfig = {
-      'CLANG_CXX_LANGUAGE_STANDARD' => 'c++14',
-      'CLANG_CXX_LIBRARY' => 'libc++'
-    }
-  spec.static_framework = true
-  spec.requires_arc = true
-  spec.frameworks = "Foundation", "UIKit"
 
+  spec.subspec 'YDLoggerUI' do |ss|
+      ss.source_files = 'YDLoggerUI/**/*'
+      ss.public_header_files = 'YDLoggerUI/**/*'
+      ss.dependency 'YDLogger/YDLogger'
+  end
+  
 end
