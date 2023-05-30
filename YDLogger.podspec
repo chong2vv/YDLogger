@@ -17,7 +17,6 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
   
   spec.source_files = "YDLogger/*.{h,cpp,m,mm}"
-  spec.public_header_files = "YDLogger/*.{h,cpp}"
   spec.static_framework = false
   spec.requires_arc = true
   spec.frameworks = "Foundation", "UIKit"
