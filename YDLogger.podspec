@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '10.0'
   spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
   
-  spec.source_files = "YDLogger/*.{h,cpp,m,mm}"
+  spec.source_files = "YDLogger/**/*.{h,cpp,m,mm}"
   spec.static_framework = false
   spec.requires_arc = true
   spec.frameworks = "Foundation", "UIKit"
@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
   spec.libraries = 'c++'
 
   spec.subspec 'YDLoggerUI' do |ss|
-      ss.source_files = 'YDLoggerUI/*.{h,m}'
+      ss.source_files = 'YDLoggerUI/**/*.{h,m}'
   end
   
 end
