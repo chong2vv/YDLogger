@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 
-@interface YDLogger : NSObject
+@interface YDLogService : NSObject
 @property (nonatomic, copy, readonly)NSString *logFileDir;          // 日志文件夹路径
 @property (nonatomic, copy, readonly)NSString *currentFilePath;     // 当前使用的日志文件路径
 

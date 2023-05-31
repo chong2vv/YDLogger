@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,15 +45,15 @@
 		15F6224E2A27208400D11F2A /* YDLogListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogListViewController.m; sourceTree = "<group>"; };
 		15F6224F2A27208400D11F2A /* YDLoggerUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLoggerUI.h; sourceTree = "<group>"; };
 		15F622502A27208400D11F2A /* YDLogPreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogPreviewViewController.h; sourceTree = "<group>"; };
-		15F622522A27208400D11F2A /* YDLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogger.h; sourceTree = "<group>"; };
+		15F622522A27208400D11F2A /* YDLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogService.h; sourceTree = "<group>"; };
 		15F622532A27208400D11F2A /* YDMmapLogSwizzeling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogSwizzeling.h; sourceTree = "<group>"; };
 		15F622542A27208400D11F2A /* YDMmapLogger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YDMmapLogger.cpp; sourceTree = "<group>"; };
-		15F622552A27208400D11F2A /* YDLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogger.m; sourceTree = "<group>"; };
+		15F622552A27208400D11F2A /* YDLogService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogService.m; sourceTree = "<group>"; };
 		15F622562A27208400D11F2A /* YDMmapLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogService.h; sourceTree = "<group>"; };
 		15F622572A27208400D11F2A /* YDMmapLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogger.h; sourceTree = "<group>"; };
 		15F622582A27208400D11F2A /* YDMmapLogService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = YDMmapLogService.mm; sourceTree = "<group>"; };
 		15F622592A27208400D11F2A /* YDMmapLogSwizzeling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDMmapLogSwizzeling.m; sourceTree = "<group>"; };
-		15F6225A2A27209B00D11F2A /* YDLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLog.h; sourceTree = "<group>"; };
+		15F6225A2A27209B00D11F2A /* YDLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogger.h; sourceTree = "<group>"; };
 		30F641BC48A370707F652E69 /* Pods-YDLogger_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Example.release.xcconfig"; path = "Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example.release.xcconfig"; sourceTree = "<group>"; };
 		34958BFFD02CDD39FD2B68D7 /* Pods-YDLogger_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Tests.debug.xcconfig"; path = "Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* YDLogger_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YDLogger_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +114,7 @@
 			children = (
 				15F6224B2A27208400D11F2A /* YDLoggerUI */,
 				15F622512A27208400D11F2A /* YDLog */,
-				15F6225A2A27209B00D11F2A /* YDLog.h */,
+				15F6225A2A27209B00D11F2A /* YDLogger.h */,
 			);
 			name = YDLogger;
 			path = ../YDLogger;
@@ -135,10 +135,10 @@
 		15F622512A27208400D11F2A /* YDLog */ = {
 			isa = PBXGroup;
 			children = (
-				15F622522A27208400D11F2A /* YDLogger.h */,
+				15F622522A27208400D11F2A /* YDLogService.h */,
 				15F622532A27208400D11F2A /* YDMmapLogSwizzeling.h */,
 				15F622542A27208400D11F2A /* YDMmapLogger.cpp */,
-				15F622552A27208400D11F2A /* YDLogger.m */,
+				15F622552A27208400D11F2A /* YDLogService.m */,
 				15F622562A27208400D11F2A /* YDMmapLogService.h */,
 				15F622572A27208400D11F2A /* YDMmapLogger.h */,
 				15F622582A27208400D11F2A /* YDMmapLogService.mm */,
@@ -306,7 +306,7 @@
 				};
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "YDLogger" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (

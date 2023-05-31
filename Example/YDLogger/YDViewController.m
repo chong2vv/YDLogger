@@ -12,6 +12,8 @@
 
 @interface YDViewController ()
 
+@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation YDViewController
@@ -35,6 +37,15 @@
 }
 
 - (void)logTestAction {
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2
+                                                  target:self
+                                                selector:@selector(timerFired:)
+                                                userInfo:nil
+                                                 repeats:YES];
+}
+
+- (void)timerFired:(NSTimer *)timer {
+   // 在这里编写要执行的定时操作的代码
     YDLogError(@"这是一条测试日志");
 }
 

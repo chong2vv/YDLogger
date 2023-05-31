@@ -31,7 +31,7 @@
 
 /**
  静态方法，关闭文件的同时，返回错误信息
-
+ 
  @param err 需要返回的错误码
  @param fd 需要关闭的文件描述符
  @return 错误码 err
@@ -61,7 +61,7 @@ int yd_logger::mmapFile (off_t offset)
     // 获取文件状态信息
     if (fstat(fd, &statInfo) != 0)
         return returnErr(errno, fd);
-
+    
     // 获取文件大小，与文件的最大长度进行比较
     uint32_t length = pc_max * ps;
     if (statInfo.st_size > length)
@@ -102,7 +102,7 @@ int yd_logger::mmapFile (off_t offset)
     // 文件只读
     else {
         if (msize < 1) return YD_NOFILE;
-            
+        
         // 映射到虚拟内存，只读模式
         start_p = mmap(NULL, msize, PROT_READ, MAP_SHARED, fd, offset);
     }
@@ -150,8 +150,8 @@ int yd_logger::munmapFile(void *start, const uint32_t fsize)
         // 更新文件大小
         if (ftruncate(fd, fsize) != 0)
             return returnErr(errno, fd);
-//        if (fsync(fd) != 0)
-//            return returnErr(errno, fd);
+        //        if (fsync(fd) != 0)
+        //            return returnErr(errno, fd);
         
         close(fd);
         fd = 0;
@@ -182,18 +182,18 @@ int yd_logger::increaseFileSize (uint32_t increasedSize)
     
     // 判断文件大小是否超出最大值
     if (length > msize_max) return YD_EXCESSIVE;
-
+    
     // 获取磁盘信息，根据CPU架构不同，文件目录也不同
     struct statfs diskInfo;
     if (statfs(STATFS_DIR, &diskInfo) < 0)
         return errno;
-
+    
     // 判断剩余的磁盘空间>=reserved_size才可以读写文件
     // 由于磁盘空间大小会超过uint32的表示范围，所以只比较运输块的个数
     int64_t freeBlk = diskInfo.f_bavail - (rbc / (diskInfo.f_bsize / bs));
     if (freeBlk < (length + diskInfo.f_bsize - 1) / diskInfo.f_bsize)
         return YD_NOSPACE;
-
+    
     // 拓展文件大小且以0填充，否则无法写入
     if (ftruncate(fd, length) != 0)
         return errno;
@@ -209,15 +209,27 @@ int yd_logger::increaseFileSize (uint32_t increasedSize)
     if (new_sp == MAP_FAILED)
         return errno;
     
+    //    // 原子性CAS操作
+    //    do {
+    //        old_sp = start_p;
+    ////       atomic_compare_exchange_strong(old_sp, new_sp, &start_p);
+    //    } while (YD_LIKELY(!OSAtomicCompareAndSwapPtrBarrier(old_sp, new_sp, &start_p)));
+    //    do {
+    //        old_cp = current_p;
+    //        new_cp = (uint8_t *)start_p + msize;
+    //    } while (YD_LIKELY(!OSAtomicCompareAndSwapPtrBarrier(old_cp, new_cp, &current_p)));
+    
     // 原子性CAS操作
     do {
         old_sp = start_p;
-//       atomic_compare_exchange_strong(old_sp, new_sp, &start_p);
-    } while (YD_LIKELY(!OSAtomicCompareAndSwapPtrBarrier(old_sp, new_sp, &start_p)));
+    } while (YD_LIKELY(!std::atomic_compare_exchange_strong(
+                                                            reinterpret_cast<std::atomic<void*>*>(&start_p), &old_sp, new_sp)));
+    
     do {
         old_cp = current_p;
-        new_cp = (uint8_t *)start_p + msize;
-    } while (YD_LIKELY(!OSAtomicCompareAndSwapPtrBarrier(old_cp, new_cp, &current_p)));
+        new_cp = reinterpret_cast<uint8_t*>(start_p) + msize;
+    } while (YD_LIKELY(!std::atomic_compare_exchange_strong(
+                                                            reinterpret_cast<std::atomic<void*>*>(&current_p), &old_cp, new_cp)));
     
     msize_file = length;
     bits.setFlags(YD_OPENED_MASK);
@@ -252,14 +264,16 @@ int yd_logger::mRecordeNext(const void *data, const size_t length)
     // 先计算，再交换
     do {
         oldi = msize;
-        newi = msize + (uint32_t)length;
-    } while (YD_LIKELY(!OSAtomicCompareAndSwap32Barrier(oldi, newi, (volatile int32_t *)&msize)));
+        newi = msize + static_cast<uint32_t>(length);
+    } while (YD_LIKELY(!std::atomic_compare_exchange_strong(
+                                                            reinterpret_cast<std::atomic<uint32_t>*>(&msize), &oldi, newi)));
+    
     do {
         oldf = current_p;
-        newf = (uint8_t *)current_p + length;
-    } while (YD_LIKELY(!OSAtomicCompareAndSwapPtrBarrier(oldf, newf, &current_p)));
-//    atomic_compare_exchange_strong((volatile atomic_uint *)&oldf, (unsigned int *)&newf, (unsigned long )&current_p);
-    
+        newf = reinterpret_cast<uint8_t*>(current_p) + length;
+    } while (YD_LIKELY(!std::atomic_compare_exchange_strong(
+                                                            reinterpret_cast<std::atomic<void*>*>(&current_p), &oldf, newf)));
+
     return 0;
 }
 

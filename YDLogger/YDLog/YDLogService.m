@@ -5,9 +5,9 @@
 //  Created by wangyuandong on 2021/9/22.
 //
 
-#import "YDLogger.h"
+#import "YDLogService.h"
 
-@interface YDLogger ()
+@interface YDLogService ()
 //@property (nonatomic, strong)dispatch_queue_t dpQueue;          // 业务处理线程
 //@property (nonatomic, strong)NSMutableSet *uploadingSet;        // 正在上传的文件名集合
 //@property (nonatomic, strong)NSOperationQueue *opQueue;         // 上传日志的队列
@@ -42,13 +42,13 @@ static NSString * const kYDLogDebugKey = @"YDLogDebug";
 static NSString * const kYDLogVerboseKey = @"YDLogVerbose";
 static NSString * const kYDLogSearchKey = @"YDLogSearch";
 
-@implementation YDLogger
+@implementation YDLogService
 
 + (instancetype)shared {
-    static YDLogger *manager = nil;
+    static YDLogService *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[YDLogger alloc] init];
+        manager = [[YDLogService alloc] init];
     });
     
     return manager;

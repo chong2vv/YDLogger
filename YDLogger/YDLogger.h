@@ -1,5 +1,5 @@
 //
-//  YDLog.h
+//  YDLogger.h
 //  YDLogger
 //
 //  Created by 王远东 on 2023/5/31.
@@ -8,5 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-#import "YDLogger.h"
+#import "YDLogService.h"
 #import "YDLoggerUI.h"

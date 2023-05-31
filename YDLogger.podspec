@@ -8,18 +8,18 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "YDLogger"
-  spec.version      = "0.1.13"
+  spec.version      = "0.2.0"
   spec.summary      = "日志库"
   spec.homepage     = "https://github.com/chong2vv/YDLogger"
   spec.license      = "MIT"
   spec.author       = { "王远东" => "chong2vv@gmail.com" }
   spec.ios.deployment_target = '10.0'
   spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
-  spec.source_files = "YDLogger/YDLog.h"
+  spec.source_files = "YDLogger/YDLogger.h"
 
   spec.subspec 'YDLog' do |ss|
       ss.source_files = "YDLogger/YDLog/**/*"
-      ss.public_header_files = "YDLogger/YDLog/{YDLogger.h,YDMmapLogService.h}"
+      ss.public_header_files = "YDLogger/YDLog/{YDLogService.h,YDMmapLogService.h}"
       ss.libraries = 'c++'
   end
   

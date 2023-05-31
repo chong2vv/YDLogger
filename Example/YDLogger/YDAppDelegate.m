@@ -7,7 +7,7 @@
 //
 
 #import "YDAppDelegate.h"
-#import <YDLog.h>
+#import <YDLogger.h>
 
 
 @implementation YDAppDelegate
@@ -15,7 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[YDLogger shared] startLogNeedHook:NO];
+    [[YDLogService shared] startLogNeedHook:NO];
     return YES;
 }
 

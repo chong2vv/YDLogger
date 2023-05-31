@@ -12,6 +12,7 @@
 #include <libkern/OSAtomic.h>
 #include <unistd.h>
 #include <string>
+#include <atomic>
 /**
  自定义错误类型
  
@@ -56,12 +57,12 @@ typedef enum : int {
  reserved_size 默认为32*1024*1024 剩余的磁盘空间需不小于reserved_size，才可以写入数据
  */
 #define YDFLAGS_BITFIELD                       \
-    uint32_t opened         : 1;               \
-    uint32_t read_write     : 1;               \
-    uint32_t block_size     : 11;              \
-    uint32_t fsize_min      : 11;              \
-    uint32_t fsize_max      : 1;               \
-    uint32_t reserved_size  : 7
+uint32_t opened         : 1;               \
+uint32_t read_write     : 1;               \
+uint32_t block_size     : 11;              \
+uint32_t fsize_min      : 11;              \
+uint32_t fsize_max      : 1;               \
+uint32_t reserved_size  : 7
 
 
 /**
@@ -87,9 +88,20 @@ typedef enum : int {
 typedef union yd_flags {
     yd_flags ():datas(YD_FLAGS_VALUE) {}
     yd_flags (uint32_t datas):datas(datas) {}
+    // 复制构造函数
+    yd_flags(const yd_flags& other) : datas(other.datas.load()) {}
+    // 复制赋值运算符
+    yd_flags& operator=(const yd_flags& other) {
+        if (this != &other) {
+            datas.store(other.datas.load());
+            
+        }
+        return *this;
+    }
     
 private:
-    uint32_t datas;
+    std::atomic<uint32_t> datas;
+    
     struct {
         YDFLAGS_BITFIELD;
     };
@@ -98,19 +110,19 @@ public:
     // 根据传入的mask，获取标志位数据
     uint32_t getFlags (uint32_t flag)
     {
-        return datas & flag;
+        return datas.load() & flag;
     }
     
     // 原子性或操作
     void setFlags (uint32_t set)
     {
-        OSAtomicOr32Barrier(set, &datas);
-//        std::atomic_fetch_or(&datas, set);
+        datas.fetch_or(set);
+        //        std::atomic_fetch_or(&datas, set);
     }
     // 原子性异或操作
     void clearFlags (uint32_t clear)
     {
-        OSAtomicXor32Barrier(clear, &datas);
+        datas.fetch_xor(clear);
     }
     
     // 原子性CAS操作，且同时进行set和clear
@@ -122,7 +134,7 @@ public:
         do {
             oldf = datas;
             newf = (oldf | set) & ~clear;
-        } while (!OSAtomicCompareAndSwap32Barrier(oldf, newf, (volatile int32_t *)&datas));
+        } while (!std::atomic_compare_exchange_weak(&datas, &oldf, newf));
     }
     
 }dataBits;
@@ -150,7 +162,7 @@ private:
 public:
     /**
      将fpath路径的文件映射到虚拟内存，大小是内存页大小的整倍数
-
+     
      @param offset 读取位置与文件起始的偏移长度
      @return 错误码为0则成功，否则失败
      */
@@ -163,7 +175,7 @@ public:
     /**
      关闭虚拟内存映射，并且更新文件大小为文件的真实大小
      cpu消耗很大，且不支持密集操作
-
+     
      @param start 文件在虚拟内存中的首地址
      @param fsize 文件长度
      @return 错误码为0则成功，否则失败
@@ -176,7 +188,7 @@ public:
     
     /**
      增加文件的大小，先更新文件大小，然后关闭当前的映射，再将更新过的大小的文件映射到虚拟内存中
-
+     
      @param increasedSize 文件更新后的大小
      @return 错误码为0则成功，否则失败
      */
@@ -189,7 +201,7 @@ public:
     
     /**
      向虚拟内存中写入数据，系统内核会定时将脏页面回写到磁盘中
-
+     
      @param start 写入数据位置的首地址
      @param data 即将写入的数据
      @param length 数据长度
@@ -200,7 +212,7 @@ public:
     
     /**
      立即回写数据，不支持密集操作
-
+     
      @param start 数据起始位置
      @param length 数据长度
      @return 错误码为0则成功，否则失败
@@ -217,7 +229,7 @@ public:
     
     /**
      根据错误码，获取错误描述
-
+     
      @param err 错误码
      @return 错误描述
      */
@@ -225,7 +237,7 @@ public:
     
     /**
      修改文件路径，无法在文件已开启状态下更换文件路径
-
+     
      @param path 文件路径
      */
     void setFilePath (const char *path)
@@ -236,7 +248,7 @@ public:
     
     /**
      修改文件读写模式
-
+     
      @param rw 是否为可读写
      */
     void setReadWrite (bool rw)
