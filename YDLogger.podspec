@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'YDLog' do |ss|
       ss.source_files = "YDLogger/YDLog/**/*"
-      ss.public_header_files = "YDLogger/YDLog/YDLogger.h"
+      ss.public_header_files = "YDLogger/YDLog/{YDLogger.h,YDMmapLogService.h}"
       ss.libraries = 'c++'
   end
   
