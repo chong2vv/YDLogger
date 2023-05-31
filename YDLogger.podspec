@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "YDLogger"
-  spec.version      = "0.1.12"
+  spec.version      = "0.1.13"
   spec.summary      = "日志库"
   spec.homepage     = "https://github.com/chong2vv/YDLogger"
   spec.license      = "MIT"
