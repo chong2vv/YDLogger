@@ -15,10 +15,11 @@ Pod::Spec.new do |spec|
   spec.author       = { "王远东" => "chong2vv@gmail.com" }
   spec.ios.deployment_target = '10.0'
   spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
-  spec.source_files = "YDLogger/*"
+  spec.source_files = "YDLogger/YDLog.h"
 
   spec.subspec 'YDLog' do |ss|
       ss.source_files = "YDLogger/YDLog/**/*"
+      ss.public_header_files = "YDLogger/YDLog/YDLogger.h"
       ss.libraries = 'c++'
   end
   
