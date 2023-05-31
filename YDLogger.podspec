@@ -16,21 +16,18 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '10.0'
   spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
   
-  spec.source_files = "YDLogger/**/*.{h,cpp,m,mm}"
-  spec.static_framework = false
+  spec.source_files = "YDLogger/**/*.{h,m,cpp,mm}"
+  spec.public_header_files = 'YDLogger/**/*.h'
+  spec.static_framework = true
   spec.requires_arc = true
   spec.frameworks = "Foundation", "UIKit"
-  spec.pod_target_xcconfig = {
-      'OTHER_LDFLAGS' => '-lc++',
-      'CLANG_CXX_LANGUAGE_STANDARD' => 'c++14',
-      'CLANG_CXX_LIBRARY' => 'libc++',
-      'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) COCOAPODS=1'
-    }
-  
   spec.libraries = 'c++'
-
-#  spec.subspec 'YDLoggerUI' do |ss|
-#      ss.source_files = 'YDLoggerUI/**/*'
-#  end
+  spec.pod_target_xcconfig = {
+      'CLANG_ENABLE_MODULES' => 'No', # 禁用模块化以支持 C++ 代码
+      'OTHER_LDFLAGS' => '-lstdc++' # 添加 C++ 标准库链接标志
+  }
+  spec.subspec 'YDLoggerUI' do |ss|
+      ss.source_files = 'YDLoggerUI/**/*'
+  end
   
 end

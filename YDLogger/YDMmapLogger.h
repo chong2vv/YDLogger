@@ -12,7 +12,6 @@
 #include <libkern/OSAtomic.h>
 #include <unistd.h>
 #include <string>
-#include <atomic>
 /**
  自定义错误类型
  

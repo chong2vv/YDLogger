@@ -39,14 +39,6 @@
 /* Begin PBXFileReference section */
 		08A8760DF643B4BC1A547348 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		0D503181E1C06544E443FD7E /* Pods-YDLogger_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Tests.release.xcconfig"; path = "Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		151416602A2615F2000036F3 /* YDLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLogger.h; sourceTree = "<group>"; };
-		151416612A2615F2000036F3 /* YDMmapLogSwizzeling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogSwizzeling.h; sourceTree = "<group>"; };
-		151416622A2615F2000036F3 /* YDMmapLogger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YDMmapLogger.cpp; sourceTree = "<group>"; };
-		151416632A2615F2000036F3 /* YDLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLogger.m; sourceTree = "<group>"; };
-		151416642A2615F2000036F3 /* YDMmapLogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogService.h; sourceTree = "<group>"; };
-		151416652A2615F2000036F3 /* YDMmapLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDMmapLogger.h; sourceTree = "<group>"; };
-		151416662A2615F2000036F3 /* YDMmapLogService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = YDMmapLogService.mm; sourceTree = "<group>"; };
-		151416672A2615F2000036F3 /* YDMmapLogSwizzeling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDMmapLogSwizzeling.m; sourceTree = "<group>"; };
 		15193D5E2A23635D000F68C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30F641BC48A370707F652E69 /* Pods-YDLogger_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Example.release.xcconfig"; path = "Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example.release.xcconfig"; sourceTree = "<group>"; };
 		34958BFFD02CDD39FD2B68D7 /* Pods-YDLogger_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLogger_Tests.debug.xcconfig"; path = "Target Support Files/Pods-YDLogger_Tests/Pods-YDLogger_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,26 +95,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1514165F2A2615F2000036F3 /* YDLogger */ = {
-			isa = PBXGroup;
-			children = (
-				151416602A2615F2000036F3 /* YDLogger.h */,
-				151416612A2615F2000036F3 /* YDMmapLogSwizzeling.h */,
-				151416622A2615F2000036F3 /* YDMmapLogger.cpp */,
-				151416632A2615F2000036F3 /* YDLogger.m */,
-				151416642A2615F2000036F3 /* YDMmapLogService.h */,
-				151416652A2615F2000036F3 /* YDMmapLogger.h */,
-				151416662A2615F2000036F3 /* YDMmapLogService.mm */,
-				151416672A2615F2000036F3 /* YDMmapLogSwizzeling.m */,
-			);
-			name = YDLogger;
-			path = ../YDLogger;
-			sourceTree = "<group>";
-		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				1514165F2A2615F2000036F3 /* YDLogger */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for YDLogger */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -232,7 +207,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				61F7690C3BBA778916070ACD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,23 +315,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		61F7690C3BBA778916070ACD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YDLogger_Example/Pods-YDLogger_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B6C387958790BE6080F66CA /* [CP] Check Pods Manifest.lock */ = {
