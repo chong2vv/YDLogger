@@ -35,6 +35,11 @@
     [self configUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 - (void)configUI {
     [self.view addSubview:self.homeTableView];
     if (@available(iOS 13.0, *)) {
