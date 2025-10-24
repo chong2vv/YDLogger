@@ -23,7 +23,7 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
 
 @interface YDLogPreviewViewController ()<UIDocumentInteractionControllerDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
-@property (nonatomic, copy)NSDictionary *logInfoDic;
+@property (nonatomic, strong)NSMutableDictionary *logInfoDic;
 @property (nonatomic, copy)NSString                 *tagKey;
 @property (nonatomic, copy)NSString                 *lastTagKey;
 @property (nonatomic, strong)NSDateFormatter        *dateFormatter;
@@ -46,7 +46,7 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
     self = [super init];
     if (self) {
         self.filePath = filePath;
-        self.logInfoDic = [[[YDLogService shared] getYDLogInfo:filePath] copy];
+        self.logInfoDic = [[[YDLogService shared] getYDLogInfo:filePath] mutableCopy];
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateStyle:NSDateFormatterFullStyle];
         [_dateFormatter setTimeStyle:NSDateFormatterShortStyle];
