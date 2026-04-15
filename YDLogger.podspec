@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "YDLogger"
-  spec.version      = "0.2.4"
+  spec.version      = "0.3.0"
   spec.summary      = "日志库"
   spec.homepage     = "https://github.com/chong2vv/YDLogger"
   spec.license      = "MIT"
@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.source_files = "YDLogger/YDLogger.h"
 
   spec.subspec 'YDLog' do |ss|
-      ss.source_files = "YDLogger/YDLog/**/*"
+      ss.source_files = "YDLogger/YDLog/**/*.{h,m,mm}", "YDLogger/YDLog/yd-mmap-core/src/**/*.{h,cpp}"
       ss.public_header_files = "YDLogger/YDLog/{YDLogService.h,YDMmapLogService.h}"
       ss.libraries = 'c++'
   end

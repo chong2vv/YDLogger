@@ -121,7 +121,7 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
     else {
         NSArray *allLines = self.logInfoDic[kYDLogAllLinesKey];
         for (NSNumber *idx in indexArr) {
-            if ([allLines[idx.integerValue] containsString:searchBar.text]) {
+            if (idx.integerValue < (NSInteger)allLines.count && [allLines[idx.integerValue] containsString:searchBar.text]) {
                 [result addObject:idx];
             }
         }
@@ -174,11 +174,17 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.numberOfLines = 0;
     if ([_tagKey isEqualToString:kYDLogAllLinesKey]) {
-        cell.textLabel.text = allLines[indexPath.row];
+        if (indexPath.row < (NSInteger)allLines.count) {
+            cell.textLabel.text = allLines[indexPath.row];
+        }
     }
     else {
-        NSInteger index = [strArr[indexPath.row] integerValue];
-        cell.textLabel.text = allLines[index];
+        if (indexPath.row < (NSInteger)strArr.count) {
+            NSInteger index = [strArr[indexPath.row] integerValue];
+            if (index < (NSInteger)allLines.count) {
+                cell.textLabel.text = allLines[index];
+            }
+        }
     }
     
     return cell;
@@ -265,16 +271,25 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
 
 - (void)_showTextView:(UITapGestureRecognizer *)gesture {
     CGPoint location = [gesture locationInView:self.tableView];
-    NSInteger row = [self.tableView indexPathForRowAtPoint:location].row;
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+    if (!indexPath) return;
+    NSInteger row = indexPath.row;
     NSArray *strArr = self.logInfoDic[_tagKey];
     NSArray *allLines = self.logInfoDic[kYDLogAllLinesKey];
+    if (!allLines.count) return;
     
     if ([_tagKey isEqualToString:kYDLogAllLinesKey]) {
-        self.focusTV.text = allLines[row];
+        if (row < (NSInteger)allLines.count) {
+            self.focusTV.text = allLines[row];
+        }
     }
     else {
-        NSInteger index = [strArr[row] integerValue];
-        self.focusTV.text = allLines[index];
+        if (row < (NSInteger)strArr.count) {
+            NSInteger index = [strArr[row] integerValue];
+            if (index < (NSInteger)allLines.count) {
+                self.focusTV.text = allLines[index];
+            }
+        }
     }
     
     self.focusMask.hidden = NO;
@@ -282,18 +297,27 @@ static NSString * const kYDLogSearchKey = @"YDLogSearch";
 
 - (void)_copyFileString:(UILongPressGestureRecognizer *)gesture {
     CGPoint location = [gesture locationInView:self.tableView];
-    NSInteger row = [self.tableView indexPathForRowAtPoint:location].row;
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+    if (!indexPath) return;
+    NSInteger row = indexPath.row;
     NSArray *strArr = self.logInfoDic[_tagKey];
     NSArray *allLines = self.logInfoDic[kYDLogAllLinesKey];
+    if (!allLines.count) return;
     
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     
     if ([_tagKey isEqualToString:kYDLogAllLinesKey]) {
-        pasteboard.string = allLines[row];
+        if (row < (NSInteger)allLines.count) {
+            pasteboard.string = allLines[row];
+        }
     }
     else {
-        NSInteger index = [strArr[row] integerValue];
-        pasteboard.string = allLines[index];
+        if (row < (NSInteger)strArr.count) {
+            NSInteger index = [strArr[row] integerValue];
+            if (index < (NSInteger)allLines.count) {
+                pasteboard.string = allLines[index];
+            }
+        }
     }
     
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"提示" message:@"复制成功" preferredStyle:UIAlertControllerStyleAlert];

@@ -8,7 +8,7 @@
 #import "YDMmapLogService.h"
 #import "YDMmapLogSwizzeling.h"
 #import "YDMmapLogSwizzeling.m"
-#include "YDMmapLogger.h"
+#include "yd-mmap-core/src/YDMmapLogger.h"
 #include <mach/mach_time.h>
 #include <execinfo.h>
 
