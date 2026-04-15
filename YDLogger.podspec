@@ -8,27 +8,20 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "YDLogger"
-  spec.version      = "0.3.1"
+  spec.version      = "0.3.2"
   spec.summary      = "日志库"
   spec.homepage     = "https://github.com/chong2vv/YDLogger"
   spec.license      = "MIT"
   spec.author       = { "王远东" => "chong2vv@gmail.com" }
   spec.ios.deployment_target = '12.0'
-  spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}", :submodules => true }
+  spec.source       = { :git => "https://github.com/chong2vv/YDLogger.git", :tag => "#{spec.version}" }
   spec.source_files = "YDLogger/YDLogger.h"
 
-  spec.prepare_command = <<-CMD
-    git submodule update --init --recursive 2>/dev/null || true
-    if [ ! -f "YDLogger/YDLog/yd-mmap-core/src/YDMmapLogger.h" ]; then
-      git clone https://github.com/chong2vv/yd-mmap-core.git YDLogger/YDLog/yd-mmap-core
-    fi
-  CMD
-
   spec.subspec 'YDLog' do |ss|
-      ss.source_files = "YDLogger/YDLog/**/*.{h,m,mm}", "YDLogger/YDLog/yd-mmap-core/src/**/*.{h,cpp}"
+      ss.source_files = "YDLogger/YDLog/**/*.{h,m,mm}"
       ss.public_header_files = "YDLogger/YDLog/{YDLogService.h,YDMmapLogService.h}"
       ss.libraries = 'c++'
-      ss.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_TARGET_SRCROOT}/YDLogger/YDLog"' }
+      ss.dependency 'yd-mmap-core', '~> 0.1'
   end
   
   spec.subspec 'YDLoggerUI' do |ss|
